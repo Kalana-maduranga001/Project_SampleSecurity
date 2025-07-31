@@ -1,5 +1,3 @@
 # My Project
-
-Here is an image from the Resources folder:
-
+This is the my program FrontEnd
 ![My Image](Resources/img.png)
