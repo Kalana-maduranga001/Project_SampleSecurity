@@ -2,115 +2,381 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Gold Dashboard</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #f8f9fa;
-      color: #000;
-    }
-    .sidebar {
-      background-color: #000;
-      color: #fff;
-      min-height: 100vh;
-    }
-    .sidebar a {
-      color: #d4af37;
-      text-decoration: none;
-      display: block;
-      padding: 15px;
-    }
-    .sidebar a:hover {
-      background-color: #1a1a1a;
-    }
-    .header {
-      background-color: #fff;
-      padding: 15px 30px;
-      border-bottom: 1px solid #dee2e6;
-    }
-    .content {
-      padding: 30px;
-    }
-    .card {
-      border: none;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    .card-title {
-      color: #000;
-    }
-    .card-body {
-      color: #333;
-    }
-    .text-gold {
-      color: #d4af37;
-    }
-    .btn-gold {
-      background-color: #d4af37;
-      border: none;
-      color: #000;
-    }
-    .btn-gold:hover {
-      background-color: #bfa134;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stakent Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<!-- Sidebar -->
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo">
+      <i class="fas fa-chart-line"></i>
+      <span>Stakent</span>
+    </div>
+  </div>
 
-<div class="container-fluid">
-  <div class="row">
-    <!-- Sidebar -->
-    <nav class="col-md-2 d-none d-md-block sidebar">
-      <div class="pt-3">
-        <h4 class="text-center text-gold mb-4">DASHBOARD</h4>
-        <a href="#">🏠 Home</a>
-        <a href="#">📊 Reports</a>
-        <a href="#">⚙️ Settings</a>
-        <a href="#">📁 Files</a>
-        <a href="signin.html">🚪 Logout</a> <!-- Link to Sign In page -->
+  <nav class="sidebar-nav">
+    <a href="#" class="nav-item active">
+      <i class="fas fa-home"></i>
+      <span>Dashboard</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="fas fa-coins"></i>
+      <span>Assets</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="fas fa-percentage"></i>
+      <span>Staking Providers</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="fas fa-calculator"></i>
+      <span>Staking Calculator</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="fas fa-database"></i>
+      <span>Data API</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="fas fa-tint"></i>
+      <span>Liquid Staking</span>
+      <span class="badge">Beta</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="fas fa-chart-bar"></i>
+      <span>Active Staking</span>
+    </a>
+
+    <div class="nav-section">Your Stakes</div>
+    <a href="#" class="nav-item stake-item">
+      <div class="stake-icon eth"></div>
+      <div class="stake-details">
+        <span>Asset Ethereum</span>
+        <small>Amount $7,099.00</small>
       </div>
-    </nav>
+    </a>
+    <a href="#" class="nav-item stake-item">
+      <div class="stake-icon avax"></div>
+      <div class="stake-details">
+        <span>Asset Avalanche</span>
+        <small>Amount $1,340.00</small>
+      </div>
+    </a>
+    <a href="#" class="nav-item stake-item">
+      <div class="stake-icon matic"></div>
+      <div class="stake-details">
+        <span>Asset Polygon (Matic)</span>
+        <small>Amount $540.00</small>
+      </div>
+    </a>
 
-    <!-- Main content -->
-    <main class="col-md-10 ms-sm-auto col-lg-10 px-md-4">
-      <div class="header d-flex justify-content-between align-items-center">
-        <h2 style="color: #000;">Welcome Back</h2>
-        <!-- Register Button -->
-        <a href="signup.html" class="btn btn-gold">Register</a> <!-- Link to Sign Up page -->
+    <div class="sidebar-footer">
+      <div class="auth-buttons">
+        <a href="signUp.html" class="auth-btn register-btn">
+          <i class="fas fa-user-plus"></i>
+          <div>
+            <strong>Register</strong>
+            <small>Create new account</small>
+          </div>
+        </a>
+        <a href="signIn.html" class="auth-btn signin-btn">
+          <i class="fas fa-sign-in-alt"></i>
+          <div>
+            <strong>Sign In</strong>
+            <small>Access your account</small>
+          </div>
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="breadcrumb">
+        <span>Staking</span>
+        <span>Stablecoin</span>
+      </div>
+      <h1>Top Staking Assets</h1>
+      <div class="filters">
+        <button class="filter-btn active">24H</button>
+        <button class="filter-btn">Proof of Stake</button>
+        <button class="filter-btn">Desc</button>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="user-profile">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Profile" class="profile-img">
+        <span>Ryan Crawford</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <button class="deposit-btn">
+        <i class="fas fa-plus"></i>
+        Deposit
+      </button>
+      <div class="notifications">
+        <i class="fas fa-bell"></i>
+        <span class="notification-badge">3</span>
+      </div>
+      <div class="search">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search">
+      </div>
+      <button class="settings-btn">
+        <i class="fas fa-cog"></i>
+        Settings
+      </button>
+    </div>
+  </header>
+
+  <!-- Dashboard Content -->
+  <div class="dashboard-content">
+    <!-- Top Staking Assets -->
+    <div class="staking-assets">
+      <div class="asset-card">
+        <div class="asset-header">
+          <div class="asset-icon eth-bg">
+            <i class="fab fa-ethereum"></i>
+          </div>
+          <div class="asset-info">
+            <h3>Proof of Stake</h3>
+            <p>Ethereum (ETH)</p>
+          </div>
+          <button class="pin-btn"><i class="fas fa-thumbtack"></i></button>
+        </div>
+        <div class="reward-rate">13.62%</div>
+        <div class="change positive">
+          <i class="fas fa-arrow-up"></i>
+          +6.26%
+        </div>
+        <div class="chart-mini">
+          <canvas class="mini-chart" data-values="[20,35,25,45,32,55,48,62,45,58,52,66]"></canvas>
+          <span class="chart-value">+$2,966</span>
+        </div>
       </div>
 
-      <div class="content">
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card text-center">
-              <div class="card-body">
-                <h5 class="card-title">Total Sales</h5>
-                <p class="card-text text-gold">$12,000</p>
+      <div class="asset-card">
+        <div class="asset-header">
+          <div class="asset-icon bnb-bg">
+            <i class="fas fa-coins"></i>
+          </div>
+          <div class="asset-info">
+            <h3>Proof of Stake</h3>
+            <p>BNB Chain</p>
+          </div>
+          <button class="pin-btn"><i class="fas fa-thumbtack"></i></button>
+        </div>
+        <div class="reward-rate">12.72%</div>
+        <div class="change positive">
+          <i class="fas fa-arrow-up"></i>
+          +2.07%
+        </div>
+        <div class="chart-mini">
+          <canvas class="mini-chart" data-values="[15,28,22,38,28,48,42,55,38,52,45,59]"></canvas>
+          <span class="chart-value">+$2,009</span>
+        </div>
+      </div>
+
+      <div class="asset-card">
+        <div class="asset-header">
+          <div class="asset-icon matic-bg">
+            <i class="fas fa-gem"></i>
+          </div>
+          <div class="asset-info">
+            <h3>Proof of Stake</h3>
+            <p>Polygon (Matic)</p>
+          </div>
+          <button class="pin-btn"><i class="fas fa-thumbtack"></i></button>
+        </div>
+        <div class="reward-rate">6.29%</div>
+        <div class="change negative">
+          <i class="fas fa-arrow-down"></i>
+          -1.87%
+        </div>
+        <div class="chart-mini">
+          <canvas class="mini-chart" data-values="[45,38,42,28,35,22,28,15,22,18,25,12]"></canvas>
+          <span class="chart-value">-$0,987</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Dashboard Grid -->
+    <div class="dashboard-grid">
+      <!-- Active Stakings -->
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Your active stakings</h2>
+          <div class="panel-actions">
+            <button class="action-btn"><i class="fas fa-expand"></i></button>
+            <button class="action-btn"><i class="fas fa-question-circle"></i></button>
+            <button class="action-btn"><i class="fas fa-sync"></i></button>
+            <button class="action-btn"><i class="fas fa-bars"></i></button>
+          </div>
+        </div>
+
+        <div class="staking-detail">
+          <div class="staking-info">
+            <span class="last-update">Last Update - 46 minutes ago</span>
+            <div class="staking-asset">
+              <div class="asset-logo avax-bg">
+                <i class="fas fa-mountain"></i>
               </div>
+              <div>
+                <h3>Stake Avalanche (AVAX)</h3>
+                <span class="current-balance">Current Reward Balance: AVAX</span>
+              </div>
+              <button class="view-profile">View Profile</button>
+            </div>
+            <div class="balance-display">31.39686</div>
+            <div class="action-buttons">
+              <button class="upgrade-btn">Upgrade</button>
+              <button class="unstake-btn">Unstake</button>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card text-center">
-              <div class="card-body">
-                <h5 class="card-title">New Users</h5>
-                <p class="card-text text-gold">150</p>
-              </div>
-            </div>
+        </div>
+
+        <div class="performance-metrics">
+          <div class="metric">
+            <h4>Momentum</h4>
+            <small>Growth dynamics</small>
+            <div class="metric-value negative">-0.82%</div>
+            <span class="time-filter">24H</span>
           </div>
-          <div class="col-md-4">
-            <div class="card text-center">
-              <div class="card-body">
-                <h5 class="card-title">Orders</h5>
-                <p class="card-text text-gold">320</p>
+          <div class="metric">
+            <h4>General</h4>
+            <small>Overview</small>
+            <div class="metric-value">$41.99</div>
+            <span class="metric-change">-1.09%</span>
+            <span class="time-filter">24H</span>
+          </div>
+          <div class="metric">
+            <h4>Risk</h4>
+            <small>Risk assessment</small>
+            <div class="metric-value">60.6%</div>
+            <span class="time-filter">24H</span>
+          </div>
+          <div class="metric">
+            <h4>Reward</h4>
+            <small>Expected profit</small>
+            <div class="reward-bars">
+              <div class="reward-bar">
+                <span>253%</span>
+                <div class="bar-fill" style="width: 85%"></div>
+              </div>
+              <div class="reward-bar">
+                <span>146%</span>
+                <div class="bar-fill" style="width: 60%"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
+
+      <!-- Liquid Staking Portfolio -->
+      <div class="panel liquid-staking">
+        <div class="panel-header">
+          <div class="ls-logo">
+            <i class="fas fa-chart-line"></i>
+            <span>Stakent</span>
+            <sup>®</sup>
+          </div>
+          <span class="new-badge">New</span>
+        </div>
+
+        <div class="ls-content">
+          <h2>Liquid Staking Portfolio</h2>
+          <p>Your new portfolio that helps you make smarter investments into Ethereum Liquid Staking</p>
+
+          <div class="ls-actions">
+            <button class="connect-wallet">
+              <i class="fas fa-wallet"></i>
+              Connect with Wallet
+            </button>
+            <button class="enter-address">
+              <i class="fas fa-key"></i>
+              Enter a Wallet Address
+            </button>
+          </div>
+        </div>
+
+        <div class="investment-period">
+          <h3>Investment Period</h3>
+          <div class="period-selector">
+            <span>6 Month</span>
+            <div class="period-slider">
+              <input type="range" min="1" max="12" value="6">
+              <div class="slider-labels">
+                <span>1</span>
+                <span>6</span>
+                <span>11</span>
+              </div>
+            </div>
+          </div>
+          <div class="contribution-period">
+            <span>Contribution Period (Month): 4 Month</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
+<script>
+  // Mini chart functionality
+  function drawMiniChart(canvas, values) {
+    const ctx = canvas.getContext('2d');
+    const width = canvas.width = 120;
+    const height = canvas.height = 40;
+
+    ctx.strokeStyle = '#6366f1';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+
+    const step = width / (values.length - 1);
+    const max = Math.max(...values);
+    const min = Math.min(...values);
+    const range = max - min;
+
+    values.forEach((value, index) => {
+      const x = index * step;
+      const y = height - ((value - min) / range) * height;
+
+      if (index === 0) {
+        ctx.moveTo(x, y);
+      } else {
+        ctx.lineTo(x, y);
+      }
+    });
+
+    ctx.stroke();
+  }
+
+  // Initialize mini charts
+  document.querySelectorAll('.mini-chart').forEach(canvas => {
+    const values = JSON.parse(canvas.dataset.values);
+    drawMiniChart(canvas, values);
+  });
+
+  // Navigation active state
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelector('.nav-item.active')?.classList.remove('active');
+      item.classList.add('active');
+    });
+  });
+
+  // Filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelector('.filter-btn.active')?.classList.remove('active');
+      btn.classList.add('active');
+    });
+  });
+</script>
 </body>
 </html>
-
