@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign In</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000; /* Black background */
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+      padding: 2rem;
+      width: 100%;
+      max-width: 400px;
+    }
+    .form-control {
+      border-color: #d4af37;
+    }
+    .form-label {
+      color: #000;
+    }
+    .btn-gold {
+      background-color: #d4af37;
+      border: none;
+      color: #000;
+    }
+    .btn-gold:hover {
+      background-color: #bfa134;
+    }
+    .card-title {
+      color: #000;
+    }
+    .signup-link {
+      color: #d4af37;
+      text-decoration: none;
+    }
+    .signup-link:hover {
+      text-decoration: underline;
+    }
+    .form-check-label {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h3 class="card-title text-center mb-4">Sign In</h3>
+  <form>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Password">
+    </div>
+
+    <!-- Show Password Checkbox -->
+    <div class="form-check mb-3">
+      <input class="form-check-input" type="checkbox" id="showPassword" onclick="togglePassword()">
+      <label class="form-check-label" for="showPassword">
+        Show Password
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-gold w-100 mb-3">Sign In</button>
+
+    <div class="text-center">
+      <span>Don't have an account? </span>
+      <a href="signup.html" class="signup-link">Sign Up</a>
+    </div>
+  </form>
+</div>
+
+<!-- Minimal JavaScript to toggle password visibility -->
+<script>
+  function togglePassword() {
+    const passwordInput = document.getElementById("password");
+    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+  }
+</script>
+
+</body>
+</html>
